@@ -1,0 +1,39 @@
+ body {
+      background-color: #e3e6e6;
+      font-family: Arial, sans-serif;
+    }
+
+
+    .hero-banner {
+      background: url('https://m.media-amazon.com/images/I/71qid7QFWJL._SX3000_.jpg') no-repeat center;
+      background-size: cover;
+      height: 400px;
+      margin-bottom: 30px;
+    }
+
+    .product-box {
+      background-color: #fff;
+      padding: 15px;
+      height: 100%;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .product-box img {
+      width: 100%;
+      height: auto;
+    }
+
+    .footer {
+      background-color: #232f3e;
+      color: white;
+      padding: 30px;
+      margin-top: 40px;
+      text-align: center;
+      font-size: 14px;
+    }
+
+    @media (max-width: 768px) {
+      .hero-banner {
+        height: 200px;
+      }
+    }

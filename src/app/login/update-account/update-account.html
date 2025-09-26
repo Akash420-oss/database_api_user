@@ -1,0 +1,35 @@
+    <div id="edit-mode">
+      <form id="edit-form" novalidate>
+        <div class="form-group">
+          <label for="name-input" class="info-label">Name</label>
+          <input type="text" id="name-input" class="form-control" (input)="regex_check()" required />
+          @if(valid_name==false){
+          <div class="invalid-feedback">Please enter your name.</div>
+          }
+        </div>
+
+        <div class="form-group">
+          <label for="email-input" class="info-label">Email</label>
+          <input type="email" id="email-input" class="form-control" (input)="regex_check()" required />
+         @if(valid_mail==false){
+          <div class="invalid-feedback">Please enter a valid email.</div>
+         }
+       @if(share.exist_mail==true){
+          <div class="invalid-feedback">This email already exist</div>
+         }
+        </div>
+        <div class="form-group">
+          <label for="password-edit"  class="info-label">Confirm Password</label>
+          <input type="password" id="password-edit" (input)="regex_check()" maxlength="8" class="form-control" required />
+          @if(passwd.value=='' && this.passwd_match==true){
+          <div class="invalid-feedback">Password is required to confirm changes.</div>
+          }
+           @if(passwd_match==false){
+          <div class="invalid-feedback">Password Not Matched</div>
+          }</div>
+        <button type="button" id="save"  class="btn btn-amazon" (click)="save_changes()">Save Changes</button>
+        <button type="button" id="cancel-edit" (click)="cmp.cancel_button()" class="btn btn-secondary ml-2">Cancel</button>
+      </form>
+    </div>
+
+    

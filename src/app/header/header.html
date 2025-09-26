@@ -1,0 +1,132 @@
+<div class="top-bar d-flex align-items-center py-2 justify-content-between">
+  <img src="Amazon-Logo.png" width="120" id="1" title="Amazon" role="button" routerLink='' (click)="sites_button('')">
+  <div class="search-bar w-50 d-flex">
+    <select class="dropstart btn btn-light btn-sm align-items-center" (change)="onChange()" id="select_item"
+      style="font-family: Arial; background-color: #efefef;">
+      @for(item of headers.categories.button_box;track item){
+      <option [value]="item" [style.background-color]="headers.select_color">{{item}}</option>
+      }
+    </select>
+    <input [type]="type_text" class="form-control" id="input_tag" placeholder="Search MyShop"
+      [(ngModel)]="this.share.input_str">
+    @for(character of this.share.input_str;track character){
+    @if(character==';'||character=='<'||character=='>'||character==':'||character=='('||character==')'||character=='$'||character=='&'||character=='?'||character=='\''||character=='\"'||character==','||character=='+'||character=='-'||character=='{'||character=='}'||character=='['||character==']'||character=='0'||character=='1'||character=='2'||character=='3'||character=='4'||character=='5'||character=='6'||character=='7'||character=='8'||character=='9'||character=='%'||character=='#'||character=='^'||character=='*'||character=='='||character=='_'||character=='.'){
+      {{check_button()}}
+      }
+      }
+      <button class="btn btn-warning" (click)="search_button()"><i class="bi bi-search"></i><svg
+          xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search"
+          viewBox="0 0 16 16">
+          <path
+            d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+        </svg></button>
+  </div>
+  <!-- <div style="cursor: pointer;" class="top-icons d-flex"> -->
+  <div class="sign-in-trigger">
+    <span (click)="login_button()">Hello, {{share.user_name|fullname}}<br><strong>Account & Lists</strong></span>
+    @if(this.share.login===true){
+    <div class="sign-in-box">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon" class="amazon-logo">
+
+      <h1 style="color:black;">Sign-In</h1>
+
+      <form>
+        <!-- <div class="mb-3">
+          <label style="color:black;" for="email" class="form-label">Email or mobile phone number</label>
+          <input type="email" class="form-control form-control-sm" id="email" name="email" #email_id="ngModel"
+            pattern="^[a-z]|[0-9]@[a-z].[a-z]+$" (input)="regex_check()" required [(ngModel)]="email_str">
+          @if(error_msg==true){
+          <div class="invalid-feedback">
+            Invalid email address.
+          </div>
+          }
+        </div> -->
+        <div class="d-grid mb-3">
+          <button type="button" class="btn btn-sm btn-warning" 
+            (click)="goto_signin()">Sign in</button>
+        </div>
+        <div style="font-size: 0.85rem;">
+          <p style="color:black;">By continuing, you agree to Amazon's <a href="#">Conditions of Use</a> and <a
+              href="#">Privacy Notice</a>.</p>
+        </div>
+      </form>
+
+      <hr>
+
+      <div class="d-grid">
+        <button type="button" class="btn btn-sm create-account-btn" style="color:black;"
+          (click)="this.share.signup_section()">Create your Amazon account</button>
+      </div>
+
+    </div>
+    }
+  </div>
+  <div>
+    <strong><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart"
+        viewBox="0 0 16 16">
+        <path
+          d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M3.102 4l1.313 7h8.17l1.313-7zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2" />
+      </svg>Cart</strong>
+  </div>
+</div>
+<!-- </div> -->
+<nav class="navbar navbar-expand-lg category-bar navbar-dark">
+  <div class="container-fluid">
+
+    <div class="collapse navbar-collapse show">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a class="nav-link" id="side" role="button" style="cursor: pointer;"
+            (click)="side_button()">☰ All</a></li>
+        <!-- <li class="nav-item"><a class="nav-link" routerLinkActive="glow-button" (click)="sites_button('')">Home</a></li> -->
+        @for(nav_category of headers.categories.nav_categories;track nav_category){
+        @let lower=nav_category.toLowerCase();
+        <li class="nav-item"><a class="nav-link" routerLinkActive="active" routerLink="{{lower}}"
+            (click)="sites_button(lower)">{{nav_category}}</a></li>
+        }
+        <!-- <li class="nav-item"><a class="nav-link" routerLink="" (click)="sites_button('')">Home</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/electronics" (click)="sites_button('electronics')">Electronics</a></li>
+            <li class="nav-item"><a class="nav-link" routerLink="/toys"  (click)="sites_button('toys')">Toys</a></li> -->
+
+      </ul>
+    </div>
+  </div>
+</nav>
+@if(side===true){
+<app-sidebar id="bar"></app-sidebar>
+}
+@if(check_url()==="/"){
+<div class="hero-banner"></div>
+
+<div class="container">
+  <div class="row g-4">
+    <div class="col-md-3">
+      <div class="product-box">
+        <h6>Top Deals in Electronics</h6>
+        <img src="elec.jpeg" alt="Electronics" style="width: 250px;height: 200px;">
+        <a routerLink="electronics" class="btn btn-sm btn-warning mt-2">Shop Now</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-box">
+        <h6>Fashion Essentials</h6>
+        <img src="fashion.jpg" alt="Fashion" style="width: 250px;height: 200px;">
+        <a routerLink="fashion" class="btn btn-sm btn-warning mt-2">Explore</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-box">
+        <h6>Home & Kitchen</h6>
+        <img src="kitchen.jpeg" alt="Home" style="width: 250px;height: 200px;">
+        <a routerLink="home" class="btn btn-sm btn-warning mt-2">Discover</a>
+      </div>
+    </div>
+    <div class="col-md-3">
+      <div class="product-box">
+        <h6>Toys & Games</h6>
+        <img src="hot_wheels.jpg" alt="toys" style="width: 250px;height: 200px;">
+        <a routerLink="toys" class="btn btn-sm btn-warning mt-2">Buy Now</a>
+      </div>
+    </div>
+  </div>
+</div>
+}

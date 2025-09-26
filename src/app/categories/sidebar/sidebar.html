@@ -1,0 +1,20 @@
+<div class="offcanvas offcanvas-start show" id="not_show" tabindex="-1" role="dialog" aria-modal="true">
+  
+  <div class="offcanvas-header sidebar-header" role="button" (click)="signin()">
+    Hello, {{this.data_share.user_name|fullname}}
+  </div>
+         <button type="button" class=" btn-close btn-close-white ms-auto close-btn" data-bs-dismiss="offcanvas" id="side_butt" aria-label="">X
+           <i class="fas fa-times"></i>
+         </button>
+  <div class="offcanvas-body p-0">
+    @for(category of from_main_compo.categories.nav_categories;track category;let i=$index){
+@let lower=category.toLowerCase();
+    @if(i==4){
+    <hr class="my-1" />
+    }
+    <a class="sidebar-link" routerLink="{{lower}}" (click)="close()">{{category}}</a>
+    }
+
+  </div>
+</div>
+<div class="offcanvas-backdrop fade show" id="off"></div>

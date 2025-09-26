@@ -1,0 +1,67 @@
+<img class="amazon-logo" src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Logo" />
+
+
+<div class="form-container shadow-sm">
+  <h4 class="mb-3">Create account</h4>
+  <form [formGroup]="reactive">
+    <div class="mb-3">
+      <label for="name" class="form-label">Your name</label>
+      <input type="text" class="form-control" id="name" placeholder="First and last name" formControlName="full_name"
+        (input)="regex_check()" />
+    </div>
+
+    <div class="mb-3">
+      <label for="email" class="form-label">Email</label>
+      <input type="email" class="form-control" id="email" placeholder="you@example.com" formControlName="email"
+        (input)="regex_check()" email required />
+      @if(email_checking==false){
+      <div class="invalid-feedback">
+        Invalid Email Address
+      </div>
+      }
+      @if(email_exist==true){
+      <!-- {{this.share_mess.error_message('email')}} -->
+      <div class="invalid-feedback">
+        Email address already exist.
+      </div>
+      }
+    </div>
+
+    <div class="mb-3">
+      <label for="password" class="form-label">Password</label>
+      <input type="password" class="form-control" id="password" placeholder="At least 8 characters" maxlength="8"
+        formControlName="passwd" (input)="regex_check()" required />
+    </div>
+
+    <div class="mb-3">
+      <label for="confirmPassword" class="form-label">Re-enter password</label>
+      <input type="password" class="form-control" id="confirmPassword" placeholder="Re-enter password"
+        formControlName="confirm_passwd" maxlength="8" (input)="regex_check()" required />
+      @if(passwd_match_char==false){
+      <div class="invalid-feedback">
+        Password Not Match
+      </div>
+      }
+    </div>
+
+    <button type="button" class="btn btn-amazon w-100 mt-2" id="button_call" (click)="set_form()">Create your Amazon
+      account</button>
+  </form>
+
+  <p class="footer-text mt-4">
+    By creating an account, you agree to Amazon's
+    <a href="#">Conditions of Use</a> and
+    <a href="#">Privacy Notice</a>.
+  </p>
+
+  <hr />
+  <div class="footer-links">
+    <p>
+      Already have an account?
+      <a (click)="signin_button()" type="button">Sign in</a>
+    </p>
+  </div>
+</div>
+@if(successful_signup==true){
+<app-successful-signup></app-successful-signup>
+}

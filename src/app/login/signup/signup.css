@@ -1,0 +1,60 @@
+    .amazon-logo {
+      display: block;
+      margin: 30px auto 10px;
+      width: 120px;
+    }
+
+    .form-container {
+      max-width: 400px;
+      background-color: white;
+      padding: 30px 25px;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      margin: 40px auto;
+    }
+
+    .btn-amazon {
+      background-color: #f0c14b;
+      border-color: #a88734 #9c7e31 #846a29;
+      color: #111;
+      font-weight: 500;
+    }
+
+    .btn-amazon:hover {
+      background-color: #ddb347;
+    }
+
+    .form-label {
+      margin-bottom: 2px;
+      font-weight: 600;
+    }
+
+    .footer-text {
+      font-size: 12px;
+      color: #555;
+      margin-top: 20px;
+    }
+
+    .footer-links a {
+      font-size: 12px;
+      color: #0066c0;
+      text-decoration: none;
+    }
+
+    .footer-links a:hover {
+      text-decoration: underline;
+    }
+
+    .form-control.is-invalid {
+      border-color: #cc0000;
+      background-color: #fff6f6;
+    }
+
+    .invalid-feedback {
+      display: block;
+      /* Always show (no JS needed) */
+      color: #cc0000;
+      font-size: 13px;
+      margin-top: 4px;
+      font-family: Arial, sans-serif;
+    }

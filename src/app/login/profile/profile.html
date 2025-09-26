@@ -1,0 +1,32 @@
+@if(account_update==true){
+<app-update-successful></app-update-successful>
+}
+@if(sueccesful_delete==true){
+ <app-delete-account-successful></app-delete-account-successful>
+}
+@else{
+ <div class="account-wrapper">
+    <h2>Your Account</h2>
+    @if(only_view_mode==true && update_mode==false && delete_mode==false){
+    <div id="view-mode">
+      <div>
+        <div class="info-label">Name</div>
+        <div id="display-name" class="info-value">{{user_name}}</div>
+      </div>
+      <div>
+        <div class="info-label">Email</div>
+        <div id="display-email" class="info-value">{{email_id}}</div>
+      </div>
+
+      <button id="edit-btn" (click)="edit_mode()" class="btn btn-amazon mr-2">Edit</button>
+      <button id="delete-btn" (click)="account_delete_mode()" class="btn btn-delete">Delete Account</button>
+    </div>
+  }
+     @else if(only_view_mode==false && update_mode==true && delete_mode==false){
+<app-update-account></app-update-account>
+  }
+      @else{
+<app-delete-account></app-delete-account>
+  }
+  </div>
+}

@@ -1,0 +1,25 @@
+    .btn-delete {
+      background-color: #d00;
+      color: white;
+      font-weight: bold;
+      border: none;
+    }
+    .btn-delete:hover {
+      background-color: #b00000;
+    }
+    .danger-text {
+      color: #b00000;
+      font-size: 0.9rem;
+      margin-top: 10px;
+    }
+    .info-label {
+      font-weight: bold;
+      color: #333;
+    }
+        .invalid-feedback {
+      display: block;
+      color: #cc0000;
+      font-size: 13px;
+      margin-top: 4px;
+      font-family: Arial, sans-serif;
+    }

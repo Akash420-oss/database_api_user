@@ -1,0 +1,116 @@
+
+/* Amazon-like CSS theme */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f3f3f3;
+}
+
+/* Top Navigation Bar */
+.navbar {
+    background-color: #131921;
+    color: white;
+    display: flex;
+    padding: 10px 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9900;
+    text-decoration: none;
+}
+
+.navbar .search-bar {
+    flex: 1;
+    margin: 0 20px;
+}
+
+.navbar input[type="text"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px 0 0 4px;
+}
+
+.navbar button {
+    padding: 10px 15px;
+    background-color: #febd69;
+    border: none;
+    border-radius: 0 4px 4px 0;
+    cursor: pointer;
+}
+
+.navbar .cart {
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Product Grid */
+.product-grid {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 20px;
+    gap: 20px;
+    justify-content: center;
+}
+
+.product-card {
+    background-color: white;
+    border: 1px solid #ddd;
+    width: 200px;
+    padding: 15px;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.product-card:hover {
+    transform: scale(1.03);
+}
+
+.product-card img {
+    max-width: 100%;
+    height: auto;
+}
+
+.product-title {
+    font-size: 14px;
+    margin: 10px 0;
+    color: #111;
+}
+
+.product-price {
+    font-size: 16px;
+    color: #b12704;
+    font-weight: bold;
+}
+
+.product-button {
+    background-color: #ffd814;
+    border: 1px solid #fcd200;
+    padding: 8px 10px;
+    width: 100%;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.product-button:hover {
+    background-color: #f7ca00;
+}
+
+/* Footer */
+.footer {
+    background-color: #232f3e;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    margin-top: 50px;
+}

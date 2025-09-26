@@ -1,0 +1,87 @@
+    .signin-container {
+      max-width: 350px;
+      margin: 50px auto;
+    }
+
+    .amazon-logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100px;
+    }
+
+    .signin-box {
+      background-color: #fff;
+      padding: 2rem;
+      border: 1px solid #ddd;
+      border-radius: 0.25rem;
+    }
+
+    .signin-box h1 {
+      font-size: 1.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .form-label {
+      font-weight: 500;
+    }
+
+    .small-link {
+      font-size: 0.85rem;
+    }
+
+    .new-to-amazon {
+      text-align: center;
+      font-size: 0.9rem;
+      color: #555;
+      margin: 2rem 0 1rem;
+      position: relative;
+    }
+
+    .new-to-amazon::before,
+    .new-to-amazon::after {
+      content: "";
+      display: inline-block;
+      width: 45%;
+      height: 1px;
+      background-color: #ccc;
+      vertical-align: middle;
+      margin: 0 5px;
+    }
+
+    .create-account-btn {
+      background-color: #e7e9ec;
+      border-color: #adb1b8;
+    }
+
+    .create-account-btn:hover {
+      background-color: #d7d9dc;
+    }
+
+    footer {
+      font-size: 0.75rem;
+      color: #555;
+      text-align: center;
+      margin-top: 3rem;
+    }
+
+    footer a {
+      color: #0066c0;
+      text-decoration: none;
+      margin: 0 0.5rem;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+        .form-control.is-invalid {
+      border-color: #cc0000;
+      background-color: #fff6f6;
+    }
+
+    .invalid-feedback {
+      display: block; /* Always show (no JS needed) */
+      color: #cc0000;
+      font-size: 13px;
+      margin-top: 4px;
+      font-family: Arial, sans-serif;
+    }

@@ -1,0 +1,24 @@
+
+
+<div id="delete-confirm">
+  <form id="delete-form" novalidate>
+    <div class="form-group">
+      <label for="password-delete" class="info-label">
+        Enter your password to confirm deletion:
+      </label>
+      <input type="password" id="password-delete" (input)="regex_check()" class="form-control" maxlength="8" required />
+    @if(passwd_require==true){
+      <div class="invalid-feedback">Password is required to delete your account.</div>
+    }
+      @if(passwd_match==false){
+      <div class="invalid-feedback">Password Not Matched</div>
+      }
+    </div>
+    <button type="button" class="btn btn-delete" (click)="confirmation_delete()">Confirm Delete</button>
+    <button type="button" id="cancel-delete" (click)="cmp.cancel_button()"
+      class="btn btn-secondary ml-2">Cancel</button>
+    <div class="danger-text mt-2">
+      ⚠️ Warning: This action cannot be undone.
+    </div>
+  </form>
+</div>

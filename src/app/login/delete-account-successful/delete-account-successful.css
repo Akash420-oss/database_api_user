@@ -1,0 +1,27 @@
+ .btn-amazon {
+      background-color: #f0c14b;
+      border-color: #a88734;
+      color: #111;
+    }
+    .btn-amazon:hover {
+      background-color: #e2b33c;
+      border-color: #a88734;
+    }
+    .content-box {
+      background-color: #fff;
+      max-width: 600px;
+      margin: 250px auto;
+      padding: 30px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .btn-amazon {
+      background-color: #f0c14b;
+      border-color: #a88734;
+      color: #111;
+    }
+
+    .btn-amazon:hover {
+      background-color: #e2b33c;
+    }

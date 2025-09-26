@@ -1,0 +1,39 @@
+.container {
+      max-width: 600px;
+      margin: 80px auto;
+      background: white;
+      padding: 40px 30px;
+      border-radius: 8px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      text-align: center;
+    }
+    .success-icon {
+      font-size: 4rem;
+      color: #007600; /* Amazon green-ish */
+      margin-bottom: 20px;
+    }
+    h1 {
+      color: #131921;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+    p {
+      color: #555;
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    .btn-amazon {
+      background-color: #f0c14b;
+      border: 1px solid #a88734;
+      color: #111;
+      font-weight: bold;
+      padding: 10px 30px;
+      border-radius: 3px;
+      font-size: 1rem;
+      text-decoration: none;
+    }
+    .btn-amazon:hover {
+      background-color: #e2b33c;
+      color: #111;
+      text-decoration: none;
+    }
