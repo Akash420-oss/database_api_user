@@ -1,0 +1,25 @@
+{
+  "name": "darlo",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "tsc": "^2.0.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akash420-oss/database_api_user.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Akash420-oss/database_api_user/issues"
+  },
+  "homepage": "https://github.com/Akash420-oss/database_api_user#readme"
+}
