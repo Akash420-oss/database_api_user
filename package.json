@@ -8,7 +8,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "test": "json-server --watch users_data.json --host 0.0.0.0 --port $PORT"
+    "start": "json-server --watch users_data.json --host 0.0.0.0 --port $PORT"
   },
     "dependencies": {
     "json-server": "^0.17.4"
