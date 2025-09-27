@@ -6,7 +6,7 @@ import { Users } from './users';
   providedIn: 'root'
 })
 export class CrudService{
-  api_url:string="http://localhost:4444/users"
+  api_url:string="https://database-api-user.onrender.com/users"
   constructor(private _http:HttpClient){}
   fetch_data(){
    return this._http.get<Users[]>(this.api_url)
